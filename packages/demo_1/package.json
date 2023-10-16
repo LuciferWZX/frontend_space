@@ -1,0 +1,29 @@
+{
+  "name": "@space/demo_1",
+  "version": "1.0.0",
+  "description": "demo_1",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --mode development",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.6",
+    "@vitejs/plugin-react": "^4.1.0",
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "@space/assets": "workspace:^",
+    "@space/react-hooks": "workspace:^",
+    "@space/utils": "workspace:^",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
+  }
+}

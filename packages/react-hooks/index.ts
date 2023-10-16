@@ -1,0 +1,1 @@
+export {default as useLinkIcon} from './src/useLinkIcon'

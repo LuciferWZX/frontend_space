@@ -1,0 +1,16 @@
+{
+  "name": "@space/utils",
+  "version": "1.0.0",
+  "description": "公共工具包",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "nanoid": "^5.0.2"
+  },
+  "peerDependencies": {
+    "nanoid": "^5.0.2"
+  }
+}

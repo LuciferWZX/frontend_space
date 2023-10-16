@@ -1,0 +1,10 @@
+{
+  "name": "@space/react-hooks",
+  "version": "1.0.0",
+  "description": "公共react hooks包",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@space/assets",
+  "version": "1.0.0",
+  "description": "公共资源包",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@space/template",
+  "version": "1.0.0",
+  "description": "生成package app的模板",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --mode development",
+    "build": "vite build",
+    "preview": "vite build & vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.6",
+    "@unocss/preset-uno": "^0.56.5",
+    "@vitejs/plugin-react": "^4.1.0",
+    "less": "^4.2.0",
+    "unocss": "^0.56.5",
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "@space/assets": "workspace:^",
+    "@space/react-hooks": "workspace:^",
+    "@space/utils": "workspace:^",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
+  }
+}
