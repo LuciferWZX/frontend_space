@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { createBrowserRouter, createHashRouter, RouterProvider } from 'react-router-dom';
 import RoutesElement from '@/routes/index';
-import useHistoryPath from '@/routes/useHistoryPath';
+import useInitHistory from '@/routes/useInitHistory';
 
 const withRouter = (WrapComponent: FC, type?: 'hash' | 'browser') => {
   const routes = [

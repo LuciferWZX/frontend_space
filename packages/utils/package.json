@@ -7,6 +7,10 @@
     "email": "2396423791@qq.com"
   },
   "license": "ISC",
+  "dependencies": {
+    "@space/types": "workspace:*",
+    "@space/stores": "workspace:*"
+  },
   "devDependencies": {
     "nanoid": "^5.0.2"
   },

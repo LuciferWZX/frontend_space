@@ -16,4 +16,4 @@ const App: FC = () => {
     </div>
   );
 };
-export default withRouter(withHistory(App));
+export default withRouter(withHistory(App), 'browser');

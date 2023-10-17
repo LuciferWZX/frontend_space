@@ -1,0 +1,15 @@
+{
+  "name": "@space/types",
+  "version": "1.0.0",
+  "description": "类型仓库",
+  "main": "src/index.ts",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.16.0"
+  }
+}

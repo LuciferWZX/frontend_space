@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import useHistoryPath from '@/routes/useHistoryPath';
+import useInitHistory from '@/routes/useInitHistory';
 
 const withHistory = (WrapComponent: FC) => {
   return () => {
-    useHistoryPath();
+    useInitHistory();
     return <WrapComponent />;
   };
 };

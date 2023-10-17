@@ -1,4 +1,5 @@
 **/node_modules/
 **/dist/
+.idea
 /packages/assets
 *.d.ts
