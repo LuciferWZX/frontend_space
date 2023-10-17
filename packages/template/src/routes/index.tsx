@@ -1,12 +1,30 @@
-import {FC} from "react";
-import LogoSvg from '@space/assets/logo.svg'
-import { useLinkIcon } from "@space/react-hooks";
-const WithRoute:FC = () => {
-    useLinkIcon(LogoSvg)
-    return(
-        <div >
-           这是模板
-        </div>
-    )
+import { FC, ReactNode } from 'react';
+import { Navigate, RouteObject, useRoutes } from 'react-router-dom';
+import Layout from '@/layout';
+import Home from '@/pages/home';
+import NotFoundPage from '@/pages/404';
+
+interface IProps {
+  children?: ReactNode;
 }
-export default WithRoute
+const RoutesElement: FC<IProps> = (props) => {
+  return useRoutes([
+    { path: '/', element: <Navigate to="/home" replace /> },
+    {
+      path: '/',
+      element: props.children,
+      children: [
+        {
+          path: '/',
+          element: <Layout />,
+          children: [
+            { path: '/home', element: <Home /> },
+            { path: '*', element: <NotFoundPage /> },
+          ],
+        },
+      ],
+    },
+    { path: '*', element: <NotFoundPage /> },
+  ]);
+};
+export default RoutesElement;

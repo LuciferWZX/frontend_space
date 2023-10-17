@@ -2,10 +2,16 @@
   "name": "frontend_space",
   "version": "1.0.0",
   "description": "我的工作集",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "template:dev": "cd packages/template && pnpm run dev"
+    "preinstall": "npx only-allow pnpm",
+    "template:dev": "pnpm --F template run dev",
+    "template:build": "pnpm -F template run build",
+    "template:preview": "pnpm run template:build && pnpm -F template run preview"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=16"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +20,7 @@
     "@types/node": "^20.8.6",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
+    "prettier": "^3.0.3",
     "typescript": "^5.2.2"
   }
 }

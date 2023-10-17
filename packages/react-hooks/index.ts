@@ -1,1 +1,1 @@
-export {default as useLinkIcon} from './src/useLinkIcon'
+export * from './src'

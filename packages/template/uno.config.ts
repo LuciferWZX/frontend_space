@@ -1,7 +1,7 @@
 // uno.config.ts
-import { defineConfig } from 'unocss'
-import presetUno from '@unocss/preset-uno'
+import { defineConfig, presetWebFonts } from 'unocss';
+import presetUno from '@unocss/preset-uno';
 
 export default defineConfig({
-    presets: [presetUno()],
-})
+  presets: [presetUno(), presetWebFonts()],
+});
