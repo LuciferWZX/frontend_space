@@ -1,9 +1,9 @@
+import { useHistory } from '@space/react-hooks';
 import { FC } from 'react';
-import useInitHistory from '@/routes/useInitHistory';
 
 const withHistory = (WrapComponent: FC) => {
   return () => {
-    useInitHistory();
+    useHistory();
     return <WrapComponent />;
   };
 };

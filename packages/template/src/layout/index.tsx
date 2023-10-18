@@ -1,12 +1,13 @@
-import { FC } from "react";
-import {Outlet} from "react-router-dom";
+import { FC } from 'react';
+import styles from './index.module.less';
+import { Outlet } from 'react-router-dom';
 
-const Layout:FC = () => {
-    return(
-        <div>
-            this is layout
-            <Outlet />
-        </div>
-    )
-}
-export default Layout
+const Layout: FC = () => {
+  return (
+    <div className={styles.layout}>
+      this is layout
+      <Outlet />
+    </div>
+  );
+};
+export default Layout;

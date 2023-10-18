@@ -9,11 +9,6 @@ const App: FC = () => {
   useEffect(() => {
     console.log('app');
   }, []);
-  return (
-    <div>
-      this is app
-      <Outlet />
-    </div>
-  );
+  return <Outlet />;
 };
 export default withRouter(withHistory(App), 'browser');

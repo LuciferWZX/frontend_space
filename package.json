@@ -7,7 +7,8 @@
     "preinstall": "npx only-allow pnpm",
     "template:dev": "pnpm --F template run dev",
     "template:build": "pnpm -F template run build",
-    "template:preview": "pnpm run template:build && pnpm -F template run preview"
+    "template:preview": "pnpm run template:build && pnpm -F template run preview",
+    "create:package": "ts-node ./scripts/create.ts"
   },
   "private": true,
   "engines": {
@@ -21,6 +22,7 @@
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
     "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }
 }

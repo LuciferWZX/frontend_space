@@ -9,7 +9,10 @@
   },
   "license": "ISC",
   "dependencies": {
-    "zustand": "^4.4.3",
-    "@space/types": "workspace:*"
+    "@space/types": "workspace:*",
+    "zustand": "^4.4.3"
+  },
+  "devDependencies": {
+    "@redux-devtools/extension": "^3.2.5"
   }
 }
