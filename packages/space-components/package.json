@@ -1,0 +1,20 @@
+{
+  "name": "@space/space-components",
+  "version": "1.0.0",
+  "description": "react组件库",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "private": true,
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "antd": "^5.10.1",
+    "classnames": "^2.3.2"
+  }
+}
