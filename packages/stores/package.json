@@ -1,7 +1,7 @@
 {
   "name": "@space/stores",
   "version": "1.0.0",
-  "description": "数据持久化仓库",
+  "description": "状态管理仓库",
   "main": "src/index.ts",
   "author": {
     "name": "wzx",
