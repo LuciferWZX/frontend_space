@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "antd": "^5.10.1",
+    "@space/types": "workspace:*",
+    "@space/react-icons": "workspace:*",
     "classnames": "^2.3.2"
   }
 }

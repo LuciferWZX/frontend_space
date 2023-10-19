@@ -5,10 +5,8 @@ import LogoSvg from '@space/assets/logo.svg';
 import { Outlet } from 'react-router-dom';
 import withHistory from '@/routes/withHistory';
 const App: FC = () => {
+  console.log('[APP组件渲染]');
   useLinkIcon(LogoSvg);
-  useEffect(() => {
-    console.log('app');
-  }, []);
   return <Outlet />;
 };
 export default withRouter(withHistory(App), 'browser');

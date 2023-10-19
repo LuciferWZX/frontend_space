@@ -1,0 +1,14 @@
+{
+  "name": "@space/react-icons",
+  "version": "1.0.0",
+  "description": "react图标包",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "react": "^18.2.0"
+  }
+}

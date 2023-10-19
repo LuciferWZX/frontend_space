@@ -8,7 +8,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module', project: 'tsconfig.json' },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh',"prettier"],
   rules: {
     'react-refresh/only-export-components': 'warn',
     'react/react-in-jsx-scope': 'off', // 使用 jsx 时不需要引用 React
