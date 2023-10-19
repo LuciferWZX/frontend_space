@@ -1,16 +1,17 @@
 import { CSSProperties, FC } from 'react';
-import { BaseProps } from '../../type.ts';
-import { Layout, theme } from 'antd';
+import { BaseProps, SiderMenuProps } from '../../type.ts';
+import { Layout, Menu, theme } from 'antd';
 import styles from '../index.module.less';
 import ClassName from 'classnames';
-interface IProps extends BaseProps {
+interface IProps extends BaseProps, SiderMenuProps {
   width?: number | string;
   collapsedWidth?: number | string;
   collapsed?: boolean;
 }
 const Sider: FC<IProps> = (props) => {
   const { token } = theme.useToken();
-  const { children, collapsed, collapsedWidth, className, style, width } = props;
+  const { children, menuProps, collapsed, collapsedWidth, className, style, width } = props;
+
   const siderStyle: CSSProperties = {
     backgroundColor: token.colorBgContainer,
     color: token.colorTextBase,
@@ -32,7 +33,7 @@ const Sider: FC<IProps> = (props) => {
       style={siderStyle}
       className={classes}
     >
-      {children}
+      {children ?? <Menu mode="inline" style={{ borderInlineEnd: 0 }} {...menuProps} />}
     </Layout.Sider>
   );
 };

@@ -1,4 +1,6 @@
 import { CSSProperties, ReactNode } from 'react';
+import { MenuProps } from 'antd';
+import * as React from 'react';
 
 export interface BaseProps {
   children?: ReactNode;
@@ -19,7 +21,30 @@ export interface BaseLayoutProps extends BaseProps {
   footerClass?: string;
   footerStyle?: CSSProperties;
 }
-export interface ExpandLayoutProps extends BaseLayoutProps {
+export interface MenuInfo {
+  key: string;
+  keyPath: string[];
+  /** @deprecated This will not support in future. You should avoid to use this */
+  item: React.ReactInstance;
+  domEvent: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>;
+}
+export interface SelectInfo extends MenuInfo {
+  selectedKeys: string[];
+}
+export interface SiderMenuProps {
+  menuProps?: {
+    items?: MenuProps['items'];
+    mode?: 'inline' | 'vertical';
+    style?: CSSProperties;
+    disabled?: boolean;
+    defaultSelectedKeys?: string[];
+    openKeys?: string[];
+    selectedKeys?: string[];
+    overflowedIndicator?: ReactNode;
+    onSelect?: (info: SelectInfo) => void;
+  };
+}
+export interface ExpandLayoutProps extends BaseLayoutProps, SiderMenuProps {
   siderProps?: {
     width?: number | string;
     collapsedWidth?: number | string;

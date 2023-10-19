@@ -7,7 +7,7 @@ import Content from '../components/content';
 import Footer from '../components/footer';
 import Sider from '../components/sider';
 import { LayoutContext } from '../layout-context.ts';
-interface IProps extends ExpandLayoutProps {}
+type IProps = ExpandLayoutProps;
 const ModernLayout: FC<IProps> = (props) => {
   const { token } = theme.useToken();
   const [expand, setExpand] = useState<boolean>(true);
@@ -30,6 +30,7 @@ const ModernLayout: FC<IProps> = (props) => {
     siderProps,
     expandable,
     expand: o_expand,
+    menuProps,
   } = props;
   const layoutStyle: CSSProperties = {
     backgroundColor: token.colorBgContainer,
@@ -45,6 +46,7 @@ const ModernLayout: FC<IProps> = (props) => {
           collapsedWidth={siderProps?.collapsedWidth}
           className={siderClass}
           style={siderStyle}
+          menuProps={menuProps}
         >
           {sider}
         </Sider>

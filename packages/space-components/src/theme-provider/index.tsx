@@ -2,13 +2,16 @@ import { FC, ReactNode } from 'react';
 import { ConfigProvider, theme as antdTheme } from 'antd';
 import { ThemeMode } from '@space/types';
 import baseComponentConfig from './baseComponentConfig.ts';
+import { useSystemTheme } from '@space/react-hooks';
 
 interface IProps {
   children?: ReactNode;
   theme?: ThemeMode | ThemeMode[];
 }
 const ThemeProvider: FC<IProps> = (props) => {
-  const { children, theme } = props;
+  const { children, theme: pTheme } = props;
+  const { systemTheme } = useSystemTheme();
+  const theme = pTheme ?? systemTheme;
   const matchTheme = (_theme: ThemeMode) => {
     if (_theme === 'compact') {
       return antdTheme.compactAlgorithm;
@@ -36,6 +39,9 @@ const ThemeProvider: FC<IProps> = (props) => {
     <ConfigProvider
       theme={{
         algorithm: getTheme(),
+        token: {
+          colorPrimary: 'orange',
+        },
         components: {
           Layout: {
             ...baseComponentConfig.Layout,

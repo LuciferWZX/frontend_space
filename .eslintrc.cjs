@@ -7,7 +7,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  parserOptions: { ecmaVersion: 'latest', sourceType: 'module', project: 'tsconfig.json' },
+  // parserOptions: { ecmaVersion: 'latest', sourceType: 'module', project: 'tsconfig.json' },
   plugins: ['react-refresh',"prettier"],
   rules: {
     'react-refresh/only-export-components': 'warn',

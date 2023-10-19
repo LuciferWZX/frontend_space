@@ -18,7 +18,27 @@ const LayoutExhibition = () => {
       </Button>
       <div>
         <ThemeProvider theme={theme}>
-          <Space>
+          <Space wrap={true}>
+            <div className={styles.box}>
+              <SpaceLayout.ModernLayout
+                style={{ height: '100%' }}
+                header={' '}
+                menuProps={{
+                  // selectedKeys: ['1'],
+                  onSelect: ({ key }) => {
+                    console.log(key);
+                  },
+                  items: [
+                    { label: '菜单1菜单1', key: '1' },
+                    { label: '菜单2', key: '2' },
+                    { label: '菜单3', key: '3' },
+                    { label: '菜单4', key: '4' },
+                  ],
+                }}
+                contentStyle={{ height: '100%', padding: 24 }}
+                footer={' '}
+              ></SpaceLayout.ModernLayout>
+            </div>
             <div className={styles.box}>
               <SpaceLayout.ClassicLayout
                 style={{ height: '100%' }}
@@ -31,25 +51,21 @@ const LayoutExhibition = () => {
               <SpaceLayout.ElegantLayout
                 style={{ height: '100%' }}
                 header={' '}
-                sider={' '}
-                siderProps={{
-                  width: 100,
+                menuProps={{
+                  // selectedKeys: ['1'],
+                  onSelect: ({ key }) => {
+                    console.log(key);
+                  },
+                  items: [
+                    { label: '菜单1菜单1', key: '1' },
+                    { label: '菜单2', key: '2' },
+                    { label: '菜单3', key: '3' },
+                    { label: '菜单4', key: '4' },
+                  ],
                 }}
                 contentStyle={{ height: '100%', padding: 24 }}
                 footer={' '}
               ></SpaceLayout.ElegantLayout>
-            </div>
-            <div className={styles.box}>
-              <SpaceLayout.ModernLayout
-                style={{ height: '100%' }}
-                header={' '}
-                sider={' '}
-                siderProps={{
-                  width: 100,
-                }}
-                contentStyle={{ height: '100%', padding: 24 }}
-                footer={' '}
-              ></SpaceLayout.ModernLayout>
             </div>
           </Space>
         </ThemeProvider>

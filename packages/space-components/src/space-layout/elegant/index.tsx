@@ -6,7 +6,7 @@ import Content from '../components/content';
 import Footer from '../components/footer';
 import Sider from '../components/sider';
 import { LayoutContext } from '../layout-context.ts';
-interface IProps extends ExpandLayoutProps {}
+type IProps = ExpandLayoutProps;
 const ElegantLayout: FC<IProps> = (props) => {
   const { token } = theme.useToken();
   const [expand, setExpand] = useState<boolean>(true);
@@ -29,6 +29,7 @@ const ElegantLayout: FC<IProps> = (props) => {
     siderProps,
     expandable,
     expand: o_expand,
+    menuProps,
   } = props;
   const layoutStyle: CSSProperties = {
     backgroundColor: token.colorBgContainer,
@@ -48,6 +49,7 @@ const ElegantLayout: FC<IProps> = (props) => {
             width={siderProps?.width}
             className={siderClass}
             style={siderStyle}
+            menuProps={menuProps}
           >
             {sider}
           </Sider>
