@@ -1,5 +1,5 @@
 import { Button, Space, SpaceLayout, ThemeProvider } from '@space/space-components';
-
+import { generateId } from '@space/utils';
 import styles from './index.module.less';
 import { useState } from 'react';
 const LayoutExhibition = () => {
@@ -15,6 +15,14 @@ const LayoutExhibition = () => {
         }}
       >
         切换主题
+      </Button>
+      <Button
+        style={{ marginBottom: 10 }}
+        onClick={() => {
+          alert(generateId(9));
+        }}
+      >
+        生成Id
       </Button>
       <div>
         <ThemeProvider theme={theme}>

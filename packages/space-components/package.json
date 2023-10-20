@@ -17,7 +17,6 @@
     "antd": "^5.10.1",
     "@space/types": "workspace:*",
     "@space/react-icons": "workspace:*",
-    "@space/react-hooks": "workspace:*",
-    "classnames": "^2.3.2"
+    "@space/react-hooks": "workspace:*"
   }
 }

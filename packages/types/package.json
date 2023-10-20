@@ -7,9 +7,5 @@
     "name": "wzx",
     "email": "2396423791@qq.com"
   },
-  "license": "ISC",
-  "dependencies": {
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.16.0"
-  }
+  "license": "ISC"
 }

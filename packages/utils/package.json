@@ -13,8 +13,5 @@
   },
   "devDependencies": {
     "nanoid": "^5.0.2"
-  },
-  "peerDependencies": {
-    "nanoid": "^5.0.2"
   }
 }
