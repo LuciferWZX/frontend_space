@@ -4,6 +4,7 @@ import Layout from '@/layout';
 import Home from '@/pages/home';
 import NotFoundPage from '@/pages/404';
 import LayoutExhibition from '@/pages/layout_exhibition';
+import Tool from '@/pages/tool';
 
 interface IProps {
   children?: ReactNode;
@@ -21,6 +22,7 @@ const RoutesElement: FC<IProps> = (props) => {
           children: [
             { path: '/exhibition', element: <LayoutExhibition /> },
             { path: '/home', element: <Home /> },
+            { path: '/tool', element: <Tool /> },
             { path: '*', element: <NotFoundPage /> },
           ],
         },

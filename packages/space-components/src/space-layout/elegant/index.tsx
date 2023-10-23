@@ -30,6 +30,7 @@ const ElegantLayout: FC<IProps> = (props) => {
     expandable,
     expand: o_expand,
     menuProps,
+    avatarProps,
   } = props;
   const layoutStyle: CSSProperties = {
     backgroundColor: token.colorBgContainer,
@@ -39,7 +40,12 @@ const ElegantLayout: FC<IProps> = (props) => {
     <LayoutContext.Provider value={{ expand, setExpand: (_expand) => setExpand(!!_expand) }}>
       <Layout className={className} style={layoutStyle}>
         {header && (
-          <Header expandable={expandable ?? true} className={headerClass} style={headerStyle}>
+          <Header
+            avatarProps={avatarProps}
+            expandable={expandable ?? true}
+            className={headerClass}
+            style={headerStyle}
+          >
             {header}
           </Header>
         )}

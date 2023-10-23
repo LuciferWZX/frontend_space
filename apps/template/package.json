@@ -25,6 +25,7 @@
   "dependencies": {
     "@space/assets": "workspace:*",
     "@space/react-hooks": "workspace:*",
+    "@space/react-icons": "workspace:*",
     "@space/space-components": "workspace:*",
     "@space/stores": "workspace:*",
     "@space/themes": "workspace:*",

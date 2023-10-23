@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
-import { MenuProps } from 'antd';
+import { AvatarProps, MenuProps } from 'antd';
 import * as React from 'react';
 
 export interface BaseProps {
@@ -20,6 +20,7 @@ export interface BaseLayoutProps extends BaseProps {
   siderStyle?: CSSProperties;
   footerClass?: string;
   footerStyle?: CSSProperties;
+  avatarProps?: AvatarProps;
 }
 export interface MenuInfo {
   key: string;
@@ -31,9 +32,10 @@ export interface MenuInfo {
 export interface SelectInfo extends MenuInfo {
   selectedKeys: string[];
 }
+export type MenuPropsItems = MenuProps['items'];
 export interface SiderMenuProps {
   menuProps?: {
-    items?: MenuProps['items'];
+    items?: MenuPropsItems;
     mode?: 'inline' | 'vertical';
     style?: CSSProperties;
     disabled?: boolean;
@@ -44,6 +46,7 @@ export interface SiderMenuProps {
     onSelect?: (info: SelectInfo) => void;
   };
 }
+
 export interface ExpandLayoutProps extends BaseLayoutProps, SiderMenuProps {
   siderProps?: {
     width?: number | string;

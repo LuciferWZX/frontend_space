@@ -66,6 +66,9 @@ importers:
       '@space/react-hooks':
         specifier: workspace:*
         version: link:../../packages/react-hooks
+      '@space/react-icons':
+        specifier: workspace:*
+        version: link:../../packages/react-icons
       '@space/space-components':
         specifier: workspace:*
         version: link:../../packages/space-components

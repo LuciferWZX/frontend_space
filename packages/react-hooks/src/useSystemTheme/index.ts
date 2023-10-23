@@ -22,7 +22,6 @@ const useSystemTheme = () => {
       darkModeMediaQuery.removeEventListener('change', handleThemeChange);
     };
   }, []);
-  console.log(111, theme);
   return { systemTheme: theme };
 };
 export default useSystemTheme;

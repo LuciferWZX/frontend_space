@@ -6,5 +6,6 @@
     "name": "wzx",
     "email": "2396423791@qq.com"
   },
+  "main": "src/index.ts",
   "license": "ISC"
 }
