@@ -5,7 +5,9 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "template:dev": "pnpm --F template run dev",
-    "dumi:dev": "pnpm --F space-preview run dumi",
+    "novaHub:dev": "pnpm --F nova_hub run dev",
+    "novaHub:build": "pnpm -F nova_hub run build",
+    "novaHub:preview": "pnpm run novaHub:build && pnpm -F nova_hub run preview",
     "template:build": "pnpm -F template run build",
     "template:preview": "pnpm run template:build && pnpm -F template run preview",
     "create:package": "ts-node ./scripts/create.ts"

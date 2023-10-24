@@ -1,0 +1,37 @@
+{
+  "name": "@space/nova_hub",
+  "version": "1.0.0",
+  "description": "我的后台管理系统",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --mode development",
+    "build": "vite build",
+    "preview": "vite build & vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.6",
+    "@unocss/preset-uno": "^0.56.5",
+    "@unocss/transformer-directives": "^0.56.5",
+    "@vitejs/plugin-react": "^4.1.0",
+    "less": "^4.2.0",
+    "unocss": "^0.56.5",
+    "vite": "^4.4.11"
+  },
+  "dependencies": {
+    "@space/assets": "workspace:*",
+    "@space/react-hooks": "workspace:*",
+    "@space/react-icons": "workspace:*",
+    "@space/space-components": "workspace:*",
+    "@space/stores": "workspace:*",
+    "@space/themes": "workspace:*",
+    "@space/types": "workspace:*",
+    "@space/utils": "workspace:*",
+    "history": "^5.3.0",
+    "storejs": "^2.0.6"
+  }
+}
