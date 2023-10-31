@@ -40,7 +40,7 @@ const ThemeProvider: FC<IProps> = (props) => {
       theme={{
         algorithm: getTheme(),
         token: {
-          colorPrimary: 'orange',
+          // colorPrimary: 'orange',
         },
         components: {
           Layout: {

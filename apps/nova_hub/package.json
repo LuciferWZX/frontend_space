@@ -31,7 +31,9 @@
     "@space/themes": "workspace:*",
     "@space/types": "workspace:*",
     "@space/utils": "workspace:*",
+    "ahooks": "^3.7.8",
     "history": "^5.3.0",
-    "storejs": "^2.0.6"
+    "storejs": "^2.0.6",
+    "umi-request": "^1.4.0"
   }
 }
