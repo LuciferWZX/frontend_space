@@ -1,5 +1,16 @@
 import { CSSProperties, FC, useContext } from 'react';
-import { Avatar, AvatarProps, Button, Col, Layout, Row, Space, theme } from 'antd';
+import {
+  Avatar,
+  AvatarProps,
+  Button,
+  Col,
+  Layout,
+  Row,
+  Space,
+  theme,
+  Dropdown,
+  DropDownProps,
+} from 'antd';
 import styles from '../index.module.less';
 import ClassName from 'classnames';
 import { BaseProps } from '../../type.ts';
@@ -9,11 +20,12 @@ import { LayoutContext } from '../../layout-context.ts';
 interface IProps extends BaseProps {
   expandable?: boolean;
   avatarProps?: AvatarProps;
+  avatarDropdownProps?: DropDownProps;
 }
 const Header: FC<IProps> = (props) => {
   const { token } = theme.useToken();
   const context = useContext(LayoutContext);
-  const { className, children, style, expandable, avatarProps } = props;
+  const { className, children, style, expandable, avatarProps, avatarDropdownProps } = props;
   const handleExpand = () => {
     context.setExpand?.(!context.expand);
   };
@@ -43,7 +55,13 @@ const Header: FC<IProps> = (props) => {
             )}
             {children}
           </Space>
-          {avatarProps && <Avatar {...avatarProps} />}
+          {avatarDropdownProps && avatarProps ? (
+            <Dropdown {...avatarDropdownProps}>
+              <Avatar {...avatarProps} />
+            </Dropdown>
+          ) : avatarProps ? (
+            <Avatar {...avatarProps} />
+          ) : null}
         </Col>
       </Row>
     </Layout.Header>

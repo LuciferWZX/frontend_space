@@ -6,11 +6,11 @@ import Content from '../components/content';
 import Footer from '../components/footer';
 import Sider from '../components/sider';
 import { LayoutContext } from '../layout-context.ts';
+
 type IProps = ExpandLayoutProps;
 const ElegantLayout: FC<IProps> = (props) => {
   const { token } = theme.useToken();
   const [expand, setExpand] = useState<boolean>(true);
-
   const {
     children,
     style,
@@ -31,6 +31,7 @@ const ElegantLayout: FC<IProps> = (props) => {
     expand: o_expand,
     menuProps,
     avatarProps,
+    avatarDropdownProps,
   } = props;
   const layoutStyle: CSSProperties = {
     backgroundColor: token.colorBgContainer,
@@ -42,6 +43,7 @@ const ElegantLayout: FC<IProps> = (props) => {
         {header && (
           <Header
             avatarProps={avatarProps}
+            avatarDropdownProps={avatarDropdownProps}
             expandable={expandable ?? true}
             className={headerClass}
             style={headerStyle}

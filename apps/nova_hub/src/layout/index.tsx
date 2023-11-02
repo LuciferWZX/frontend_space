@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import withTheme from '@/layout/withTheme';
+import withTheme from '@/withTheme';
 
 const Layout: FC = () => {
   return (
@@ -9,4 +9,4 @@ const Layout: FC = () => {
     </div>
   );
 };
-export default withTheme(Layout);
+export default Layout;

@@ -3,7 +3,9 @@ import styles from './index.module.less';
 import { useRequest } from 'ahooks';
 import { UserService } from '@/services/api/user';
 import { Button, Form, Input, Typography } from '@space/space-components';
-import { message } from '@space/utils';
+import { history, message } from '@space/utils';
+import { useUserStore } from '@space/stores';
+import store from 'storejs';
 const { Text } = Typography;
 interface FormProps {
   username: string;
@@ -13,10 +15,12 @@ const Login: FC = () => {
   const [form] = Form.useForm<FormProps>();
   const { runAsync: login, loading } = useRequest(UserService.login, { manual: true });
   const onFinish = async (values: FormProps) => {
-    console.log(values);
     const res = await login(values);
     if (res.code === 200) {
       message()!.success('登录成功');
+      store.set(__TOKEN__, res.data.token);
+      useUserStore.setState({ user: res.data });
+      history.push('/home');
     }
   };
   return (

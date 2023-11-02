@@ -1,13 +1,15 @@
 import store from 'storejs';
+import { UserService } from '@/services/api/user';
 const UserUtil = {
   verifyToken: async () => {
     const token: string | undefined = store.get(__TOKEN__);
     if (token) {
-      console.log('校验token');
-      return true;
+      const res = await UserService.profile();
+      if (res.code === 200) {
+        return res.data;
+      }
     }
-    console.log('无token');
-    return false;
+    return null;
   },
 };
 export default UserUtil;

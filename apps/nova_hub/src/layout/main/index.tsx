@@ -1,15 +1,22 @@
 import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
-import { MenuPropsItems, SpaceLayout, SelectInfo } from '@space/space-components';
-import withTheme from '@/layout/withTheme';
+import { MenuPropsItems, SpaceLayout, SelectInfo, MenuProps } from '@space/space-components';
+import ClassNames from 'classnames';
+import styles from './index.module.less';
+import withTheme from '@/withTheme';
 import {
   MingcuteLayoutTopLine,
   TablerLayout,
   RiLayout5Line,
   MingcuteLayout11Line,
+  UilSignOutAlt,
 } from '@space/react-icons';
+import { shallow, useUserStore } from '@space/stores';
+import { history, modal } from '@space/utils';
+import store from 'storejs';
 
 const MainLayout: FC = () => {
+  const user = useUserStore((state) => state.user, shallow);
   const items: MenuPropsItems = [
     {
       key: 'layout',
@@ -27,16 +34,47 @@ const MainLayout: FC = () => {
       label: '工具',
     },
   ];
+  const avatarItems: MenuProps['items'] = [
+    {
+      key: 'logout',
+      icon: <UilSignOutAlt />,
+      danger: true,
+      label: '退出登录',
+      onClick: () => {
+        modal()!.confirm({
+          title: '退出登录',
+          content: '确定退出登录吗?',
+          okType: 'text',
+          cancelButtonProps: {
+            type: 'primary',
+          },
+          onOk: () => {
+            useUserStore.setState({ user: undefined });
+            store.remove(__TOKEN__);
+            history.push('/access/login', { replace: true });
+          },
+        });
+      },
+    },
+  ];
   const onSelect = (info: SelectInfo) => {
     console.log(info);
   };
   return (
     <SpaceLayout.ElegantLayout
+      className={ClassNames({ [styles['main-layout']]: true })}
       menuProps={{ items: items, onSelect: onSelect }}
-      header={'this is header'}
+      header={' '}
       avatarProps={{
         size: 40,
-        src: 'https://t10.baidu.com/it/app=106&f=JPEG&fm=30&fmt=auto&u=1079872785%2C217544614?w=312&h=208&s=329D7D841E624C94450E38690300F01A',
+        src: user?.avatar,
+        children: user?.nickname?.[0],
+        className: styles.avatar,
+      }}
+      avatarDropdownProps={{
+        menu: {
+          items: avatarItems,
+        },
       }}
     >
       <Outlet />

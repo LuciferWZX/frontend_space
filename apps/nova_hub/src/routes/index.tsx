@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react';
+import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
 import Layout from '@/layout';
 import AccessLayout from '@/layout/access';
 import { Navigate, RouteObject, useLocation, useNavigate, useRoutes } from 'react-router-dom';
@@ -30,6 +30,7 @@ const RoutesElement: FC<IProps> = (props) => {
     (item) => location.pathname.startsWith(item) && location.pathname !== '/'
   );
   const [authRoutes, setAuthRoutes] = useState<RouteObject[]>([]);
+
   //基本路由
   const baseRoutes: RouteObject[] = [
     {
@@ -43,17 +44,20 @@ const RoutesElement: FC<IProps> = (props) => {
     },
   ];
   //基本权限路由
-  const baseAuthRoutes: RouteObject[] = [
-    {
-      path: '/',
-      element: <MainLayout />,
-      children: [
-        { path: '/', element: <Navigate to="home" replace /> },
-        { path: 'home', element: <Home /> },
-        { path: '*', element: <NotFoundPage /> },
-      ],
-    },
-  ];
+  const baseAuthRoutes: RouteObject[] = useMemo(
+    () => [
+      {
+        path: '/',
+        element: <MainLayout />,
+        children: [
+          { path: '/', element: <Navigate to="home" replace /> },
+          { path: 'home', element: <Home /> },
+          { path: '*', element: <NotFoundPage /> },
+        ],
+      },
+    ],
+    []
+  );
   //全部的路由
   const routes: RouteObject[] = [
     {
@@ -61,32 +65,35 @@ const RoutesElement: FC<IProps> = (props) => {
       element: props.children,
       children: [
         {
-          path: '/',
+          path: '',
           element: <Layout />,
           children: [...authRoutes, ...baseRoutes, { path: '*', element: <NotFoundPage /> }],
         },
       ],
     },
-    { path: '*', element: <NotFoundPage /> },
+    { path: '*', element: <Navigate to="/access/login" replace /> },
   ];
-
   const elements = useRoutes(routes);
   const { status } = useAuth(inWhiteList);
+  //用户存在将路由赋予
+  useEffect(() => {
+    if (user?.id) {
+      setAuthRoutes(baseAuthRoutes);
+    }
+  }, [baseAuthRoutes, user?.id]);
+  //@note 查询用户信息
   useEffect(() => {
     //说明在白名单内
     if (inWhiteList) {
       return;
     }
     if (status !== 'Pending') {
-      if (user?.id) {
-        setAuthRoutes(baseAuthRoutes);
-        return;
-      } else {
+      if (status === 'Denied') {
         setAuthRoutes([]);
         navigate('/access/login');
       }
     }
-  }, [user, status]);
+  }, [status]);
   if (status === 'Pending') {
     return <div>校验中。。。</div>;
   }

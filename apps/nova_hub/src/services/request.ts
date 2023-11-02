@@ -1,5 +1,6 @@
 import { message } from '@space/utils';
 import { extend, ResponseError } from 'umi-request';
+import store from 'storejs';
 interface ErrorData {
   statusCode: number;
   message: string;
@@ -18,7 +19,7 @@ const errorHandler = (error: ResponseError) => {
     console.log(error.request);
     if (error.data) {
       const data = error.data as ErrorData;
-      message()!.error({ content: data.message, key: data.statusCode });
+      message()!.error({ content: data.message, key: data.statusCode }).then();
     }
   } else {
     // 请求初始化时出错或者没有响应返回的异常
@@ -36,6 +37,13 @@ const request = extend({
 });
 // request拦截器, 改变url 或 options.
 request.interceptors.request.use((url, options) => {
+  const auth: string | undefined = store.get(__TOKEN__);
+  if (auth) {
+    options.headers = {
+      ...options.headers,
+      authorization: `Bearer ${auth}`,
+    };
+  }
   return {
     url: url,
     options: options,

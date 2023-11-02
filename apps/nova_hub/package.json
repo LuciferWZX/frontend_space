@@ -14,6 +14,7 @@
     "preview": "vite build & vite preview"
   },
   "devDependencies": {
+    "@types/classnames": "^2.3.1",
     "@types/node": "^20.8.6",
     "@unocss/preset-uno": "^0.56.5",
     "@unocss/transformer-directives": "^0.56.5",
@@ -32,6 +33,8 @@
     "@space/types": "workspace:*",
     "@space/utils": "workspace:*",
     "ahooks": "^3.7.8",
+    "classnames": "^2.3.2",
+    "dayjs": "^1.11.10",
     "history": "^5.3.0",
     "storejs": "^2.0.6",
     "umi-request": "^1.4.0"

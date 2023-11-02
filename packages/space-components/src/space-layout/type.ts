@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
-import { AvatarProps, MenuProps } from 'antd';
+import { AvatarProps, DropDownProps, MenuProps } from 'antd';
 import * as React from 'react';
 
 export interface BaseProps {
@@ -21,6 +21,7 @@ export interface BaseLayoutProps extends BaseProps {
   footerClass?: string;
   footerStyle?: CSSProperties;
   avatarProps?: AvatarProps;
+  avatarDropdownProps?: DropDownProps;
 }
 export interface MenuInfo {
   key: string;
