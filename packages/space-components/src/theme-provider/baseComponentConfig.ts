@@ -11,5 +11,8 @@ const baseComponentConfig: ComponentsConfig = {
     headerPadding: '0 24px',
     footerPadding: '16px 24px',
   },
+  Table: {
+    headerBorderRadius: 0,
+  },
 };
 export default baseComponentConfig;

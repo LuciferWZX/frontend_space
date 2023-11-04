@@ -10,6 +10,8 @@ import {
   RiLayout5Line,
   MingcuteLayout11Line,
   UilSignOutAlt,
+  CarbonGuiManagement,
+  MaterialSymbolsGroupsRounded,
 } from '@space/react-icons';
 import { shallow, useUserStore } from '@space/stores';
 import { history, modal } from '@space/utils';
@@ -32,6 +34,12 @@ const MainLayout: FC = () => {
     {
       key: 'tool',
       label: '工具',
+    },
+    {
+      key: 'manage',
+      label: '管理',
+      icon: <CarbonGuiManagement />,
+      children: [{ label: '用户', key: '/user', icon: <MaterialSymbolsGroupsRounded /> }],
     },
   ];
   const avatarItems: MenuProps['items'] = [
@@ -58,7 +66,8 @@ const MainLayout: FC = () => {
     },
   ];
   const onSelect = (info: SelectInfo) => {
-    console.log(info);
+    const { key } = info;
+    history.push(key);
   };
   return (
     <SpaceLayout.ElegantLayout

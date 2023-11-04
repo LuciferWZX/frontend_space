@@ -5,3 +5,5 @@ export { default as MingcuteLayoutTopLine } from './mingcute/layout-top-line';
 export { default as RiLayout5Line } from './ri/layout-5-line';
 export { default as MingcuteLayout11Line } from './mingcute/layout-11-line';
 export { default as UilSignOutAlt } from './uil/sign-out-alt';
+export { default as CarbonGuiManagement } from './carbon/gui-management';
+export { default as MaterialSymbolsGroupsRounded } from './material/groups-rounded';

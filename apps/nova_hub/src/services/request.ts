@@ -14,6 +14,9 @@ const errorHandler = (error: ResponseError) => {
   if (error.response) {
     // 请求已发送但服务端返回状态码非 2xx 的响应
     console.log(error.response.status);
+    if (error.response.status === 401) {
+      store.remove(__TOKEN__);
+    }
     console.log(error.response.headers);
     console.log(error.data);
     console.log(error.request);

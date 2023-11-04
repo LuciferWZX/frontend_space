@@ -50,6 +50,9 @@ const ThemeProvider: FC<IProps> = (props) => {
           Layout: {
             ...baseComponentConfig.Layout,
           },
+          Table: {
+            ...baseComponentConfig.Table,
+          },
         },
       }}
     >

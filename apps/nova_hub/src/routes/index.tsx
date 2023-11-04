@@ -9,6 +9,7 @@ import Home from '@/pages/home';
 import useAuth from '@/routes/useAuth';
 import { shallow, useUserStore } from '@space/stores';
 import { history } from '@space/utils';
+import UserPage from '@/pages/user';
 // const Layout = lazy(() => import('@/layout'));
 // const MainLayout = lazy(() => import('@/layout/main'));
 // const AccessLayout = lazy(() => import('@/layout/access'));
@@ -47,11 +48,12 @@ const RoutesElement: FC<IProps> = (props) => {
   const baseAuthRoutes: RouteObject[] = useMemo(
     () => [
       {
-        path: '/',
+        path: '',
         element: <MainLayout />,
         children: [
-          { path: '/', element: <Navigate to="home" replace /> },
+          { path: '', element: <Navigate to="home" replace /> },
           { path: 'home', element: <Home /> },
+          { path: 'user', element: <UserPage /> },
           { path: '*', element: <NotFoundPage /> },
         ],
       },
