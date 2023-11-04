@@ -35,7 +35,6 @@ export const UserService = {
     page?: number;
     pageSize?: number;
   }): Promise<ResponseData<{ data: User[]; total: number; totalPages: number }>> {
-    console.log(111, params);
     if (getUsersController) {
       getUsersController.abort();
     }
