@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import UserUtil from '@/utils/UserUtil';
-import { shallow, useUserStore } from '@space/stores';
+import { useUserStore } from '@space/stores';
 import { User } from '@space/types';
-import { message } from '@space/utils';
+import { message } from '@/utils/antdStore';
 type PermissionStatus = 'Pending' | 'Granted' | 'Denied';
 const useAuth = (inWhiteList?: boolean) => {
   const [permissionStatus, setPermissionStatus] = useState<PermissionStatus>('Pending');
@@ -21,9 +21,11 @@ const useAuth = (inWhiteList?: boolean) => {
       console.error('查询用户信息出错:', e);
     }
     if (user) {
-      message()!
-        .success({ icon: '🎉', content: `  ${user.username}，欢迎回来~`, key: 'success' })
-        .then();
+      setTimeout(() => {
+        message
+          .success({ icon: '🎉', content: `  ${user?.username}，欢迎回来~`, key: 'success' })
+          .then();
+      }, 400);
       useUserStore.setState({ user: user });
       setPermissionStatus('Granted');
     } else {

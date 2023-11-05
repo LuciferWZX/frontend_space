@@ -1,5 +1,5 @@
 import { Avatar, ColumnsType, Space, Table } from '@space/space-components';
-import { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, FC, memo, SetStateAction } from 'react';
 import styles from './index.module.less';
 import { shallow, useUserStore } from '@space/stores';
 import { User } from '@space/types';
@@ -16,9 +16,10 @@ interface IProps {
     SetStateAction<{ page: number; pageSize: number; totalPages: number; total: number }>
   >;
 }
-const UserTable: FC<IProps> = (props) => {
+const UserTable: FC<IProps> = memo((props) => {
   const { loading, page, pageSize, setTableParams, total } = props;
   const users = useUserStore((state) => state.users, shallow);
+
   const columns: ColumnsType<User> = [
     {
       title: '头像',
@@ -90,9 +91,12 @@ const UserTable: FC<IProps> = (props) => {
     },
     {
       title: '状态',
+      dataIndex: 'isBanned',
       key: 'isBanned',
       width: 100,
-      render: (isBanned: boolean) => (isBanned ? '禁用' : '正常'),
+      render: (isBanned: boolean) => {
+        return isBanned ? '禁用' : '正常';
+      },
     },
     {
       title: '操作',
@@ -120,6 +124,7 @@ const UserTable: FC<IProps> = (props) => {
           pageSizeOptions: [10, 20, 40, 80],
           showSizeChanger: true,
           onChange: (page, pageSize) => {
+            useUserStore.setState({ users: [] });
             setTableParams((oldParams) => ({ ...oldParams, page, pageSize }));
           },
         }}
@@ -132,5 +137,5 @@ const UserTable: FC<IProps> = (props) => {
       />
     </div>
   );
-};
+});
 export default UserTable;

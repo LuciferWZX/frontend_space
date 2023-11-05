@@ -5,9 +5,15 @@ import LogoSvg from '@space/assets/logo.svg';
 import { Outlet } from 'react-router-dom';
 import withHistory from '@/routes/withHistory';
 import withTheme from '@/withTheme';
+import AntdStore from '@/utils/antdStore';
 
 const App: FC = () => {
   useLinkIcon(LogoSvg);
-  return <Outlet />;
+  return (
+    <>
+      <AntdStore />
+      <Outlet />
+    </>
+  );
 };
 export default withTheme(withRouter(withHistory(App), 'browser'));

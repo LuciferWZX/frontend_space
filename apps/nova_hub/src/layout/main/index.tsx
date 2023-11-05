@@ -14,8 +14,9 @@ import {
   MaterialSymbolsGroupsRounded,
 } from '@space/react-icons';
 import { shallow, useUserStore } from '@space/stores';
-import { history, modal } from '@space/utils';
+import { history } from '@space/utils';
 import store from 'storejs';
+import { modal } from '@/utils/antdStore';
 
 const MainLayout: FC = () => {
   const user = useUserStore((state) => state.user, shallow);
@@ -49,7 +50,7 @@ const MainLayout: FC = () => {
       danger: true,
       label: '退出登录',
       onClick: () => {
-        modal()!.confirm({
+        modal.confirm({
           title: '退出登录',
           content: '确定退出登录吗?',
           okType: 'text',

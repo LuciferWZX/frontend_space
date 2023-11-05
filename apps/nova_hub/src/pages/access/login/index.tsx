@@ -3,9 +3,10 @@ import styles from './index.module.less';
 import { useRequest } from 'ahooks';
 import { UserService } from '@/services/api/user';
 import { Button, Form, Input, Typography } from '@space/space-components';
-import { history, message } from '@space/utils';
+import { history } from '@space/utils';
 import { useUserStore } from '@space/stores';
 import store from 'storejs';
+import { message } from '@/utils/antdStore';
 const { Text } = Typography;
 interface FormProps {
   username: string;
@@ -17,7 +18,7 @@ const Login: FC = () => {
   const onFinish = async (values: FormProps) => {
     const res = await login(values);
     if (res.code === 200) {
-      message()!.success('登录成功');
+      message.success('登录成功');
       store.set(__TOKEN__, res.data.token);
       useUserStore.setState({ user: res.data });
       history.push('/home');

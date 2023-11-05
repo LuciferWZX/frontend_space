@@ -1,6 +1,6 @@
-import { message } from '@space/utils';
 import { extend, ResponseError } from 'umi-request';
 import store from 'storejs';
+import { message } from '@/utils/antdStore';
 interface ErrorData {
   statusCode: number;
   message: string;
@@ -13,26 +13,25 @@ export interface ResponseData<T> {
 const errorHandler = (error: ResponseError) => {
   if (error.response) {
     // 请求已发送但服务端返回状态码非 2xx 的响应
-    console.log(error.response.status);
     if (error.response.status === 401) {
       store.remove(__TOKEN__);
     }
-    console.log(error.response.headers);
-    console.log(error.data);
-    console.log(error.request);
     if (error.data) {
       const data = error.data as ErrorData;
-      message()!.error({ content: data.message, key: data.statusCode }).then();
+      message.error({ content: data.message, key: data.statusCode }).then();
     }
   } else {
+    console.error(error);
     // 请求初始化时出错或者没有响应返回的异常
-    console.log(error.message);
+    if (error.type === 'Timeout') {
+      message.error({ content: '请求超时', key: 'timeout' }).then();
+    }
   }
   throw error; // 如果throw. 错误将继续抛出.
 };
 const request = extend({
   prefix: '/api',
-  timeout: 1000,
+  timeout: 6000,
   errorHandler: errorHandler,
   headers: {
     'Content-Type': 'application/json',
