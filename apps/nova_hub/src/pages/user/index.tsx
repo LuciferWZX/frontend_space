@@ -10,7 +10,7 @@ const UserPage: FC = () => {
   }, []);
   return (
     <div className={styles.userPageBox}>
-      <FilterHeader />
+      <FilterHeader search={search} />
       <UserTable
         page={tableParams.page}
         total={tableParams.total}

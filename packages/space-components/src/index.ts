@@ -16,6 +16,7 @@ export {
   Table,
   Flex,
   App,
+  Radio,
 } from 'antd';
 export type { MenuPropsItems, SelectInfo } from './space-layout/type.ts';
 export type { MessageInstance } from 'antd/es/message/interface';

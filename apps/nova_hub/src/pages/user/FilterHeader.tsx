@@ -1,8 +1,10 @@
 import { Button, Flex, Input } from '@space/space-components';
 import { FC, useState } from 'react';
 import AddUserModal from '@/pages/user/AddUserModal';
-
-const FilterHeader: FC = () => {
+interface IProps {
+  search: Function;
+}
+const FilterHeader: FC<IProps> = ({ search }) => {
   const [open, setOpen] = useState<boolean>(false);
   return (
     <Flex justify={'space-between'} className={'my-4'}>
@@ -10,7 +12,7 @@ const FilterHeader: FC = () => {
       <Button type="primary" onClick={() => setOpen(true)}>
         添加
       </Button>
-      <AddUserModal open={open} setOpen={setOpen} />
+      <AddUserModal search={search} open={open} setOpen={setOpen} />
     </Flex>
   );
 };

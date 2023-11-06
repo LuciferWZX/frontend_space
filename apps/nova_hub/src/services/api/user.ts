@@ -45,5 +45,18 @@ export const UserService = {
       params: params,
     });
   },
+  async register(params: {
+    username: string;
+    nickname: string;
+    password: string;
+    phone?: string;
+    email?: string;
+    gender: string;
+  }): Promise<ResponseData<User>> {
+    return request('/user/register', {
+      data: params,
+      method: 'POST',
+    });
+  },
 };
 let getUsersController: AbortController | null;
