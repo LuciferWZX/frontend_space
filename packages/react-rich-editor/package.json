@@ -1,0 +1,22 @@
+{
+  "name": "@space/react-rich-editor",
+  "version": "1.0.0",
+  "description": "react富文本编辑器",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "main": "src/index.ts",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/slate": "^0.47.14",
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "slate": "^0.100.0",
+    "slate-history": "^0.100.0",
+    "slate-react": "^0.101.0"
+  }
+}

@@ -1,11 +1,14 @@
-import { Button, Space, SpaceLayout, ThemeProvider } from '@space/space-components';
+import { Button, Input, Space, SpaceLayout, ThemeProvider } from '@space/space-components';
 import { generateId } from '@space/utils';
 import styles from './index.module.less';
 import { useState } from 'react';
+import Editor from '@/pages/layout_exhibition/editor';
 const LayoutExhibition = () => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   return (
     <div className={styles.exhibition}>
+      <Input.TextArea placeholder={'请输入'} />
+      <Editor />
       <Button
         style={{ marginBottom: 10 }}
         onClick={() => {

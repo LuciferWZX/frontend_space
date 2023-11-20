@@ -26,6 +26,7 @@
     "@space/assets": "workspace:*",
     "@space/react-hooks": "workspace:*",
     "@space/react-icons": "workspace:*",
+    "@space/react-rich-editor": "workspace:*",
     "@space/space-components": "workspace:*",
     "@space/stores": "workspace:*",
     "@space/themes": "workspace:*",

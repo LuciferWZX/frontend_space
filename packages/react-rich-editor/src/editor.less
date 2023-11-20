@@ -1,0 +1,30 @@
+.rich-editor{
+  background-color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 11px;
+  color: rgba(0, 0, 0, 0.88);
+  font-weight: normal;
+  line-height: 1.5714285714285714;
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,'Noto Sans',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  font-size: 14px;
+  border-radius: 6px;
+  position: relative;
+  border: 1px solid #d9d9d9;
+  transition: all 0.2s;
+  max-height: 50px;
+  overflow: auto;
+  &:hover{
+    border-color: #4096ff;
+  }
+  &:focus{
+    border-color: #1677ff;
+    box-shadow: 0 0 0 2px rgba(5, 145, 255, 0.1);
+    outline: 0;
+  }
+}
+.rich-editor-placeholder{
+  line-height: 1.5714285714285714;
+  left: 0;
+  padding: 4px 11px;
+}
