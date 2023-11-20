@@ -32,8 +32,13 @@ export type CustomElement = ParagraphElement | CodeElement | DefaultElement | Me
 export type FormattedText = { text: string; bold?: true };
 
 export type CustomText = FormattedText;
+export enum MentionItemType {
+  AVATAR = 'avatar',
+}
 export interface MentionItem {
   value: string | number;
   label: string | ReactNode;
   filterKeyword?: string;
+  type?: MentionItemType;
+  icon?: ReactNode;
 }

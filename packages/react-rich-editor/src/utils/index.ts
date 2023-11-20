@@ -8,7 +8,6 @@ const EditorUtils = {
       character,
       children: [{ text: '' }],
     };
-    console.log(1111, mention);
     Transforms.insertNodes(editor, mention);
     Transforms.move(editor);
   },
