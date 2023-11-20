@@ -30,7 +30,6 @@ const useMentions = (editor: Editor, config: UseMentionConfig) => {
         // 获取视口的尺寸
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
-
         // 计算最大顶部位置，确保元素在视口内
         const maxTop = viewportHeight - el.clientHeight;
         const adjustedTop = Math.min(rect.top + window.scrollY + 24, maxTop);
@@ -39,8 +38,8 @@ const useMentions = (editor: Editor, config: UseMentionConfig) => {
         const maxLeft = viewportWidth - el.clientWidth;
         const adjustedLeft = Math.min(rect.left + window.scrollX, maxLeft);
 
-        el.style.top = `${adjustedTop}px`;
-        el.style.left = `${adjustedLeft}px`;
+        // el.style.top = `${adjustedTop}px`;
+        // el.style.left = `${adjustedLeft}px`;
         // el.style.top = `${rect.top + window.scrollY + 24}px`;
         // el.style.left = `${rect.left + window.scrollX}px`;
       }

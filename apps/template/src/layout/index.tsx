@@ -32,6 +32,7 @@ const Layout: FC = () => {
   };
   return (
     <SpaceLayout.ElegantLayout
+      style={{ height: '100vh' }}
       menuProps={{ items: items, onSelect: onSelect }}
       header={'this is header'}
       avatarProps={{
