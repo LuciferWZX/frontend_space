@@ -1,14 +1,22 @@
 .layout{
     @apply h-screen flex;
-    background: linear-gradient(180deg, #0575E6 0%, #02298A 84.79%, #021B79 100%);
+    align-items: center;
+    justify-content: center;
+    .innerLayout{
+        width: 800px;
+        height: 400px;
+        display: flex;
+        align-items: center;
+    }
     .leftContent{
-        flex: 6;
+       flex: 1;
     }
     .rightContent{
-        flex: 5;
-        min-width: 400px;
+        flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 8px;
+        height: 580px;
     }
 }

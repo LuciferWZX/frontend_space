@@ -10,10 +10,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host --mode development",
+    "tauri-dev": "tauri dev",
+    "tauri-build": "tauri build --target aarch64-apple-darwin",
     "build": "vite build",
     "preview": "vite build & vite preview"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.5.7",
     "@types/classnames": "^2.3.1",
     "@types/node": "^20.8.6",
     "@unocss/preset-uno": "^0.56.5",
@@ -36,6 +39,7 @@
     "classnames": "^2.3.2",
     "dayjs": "^1.11.10",
     "history": "^5.3.0",
+    "lottie-react": "^2.4.0",
     "storejs": "^2.0.6",
     "umi-request": "^1.4.0"
   }
