@@ -1,0 +1,45 @@
+{
+  "name": "@space/sofia-design",
+  "version": "0.0.1",
+  "description": "Sofia Design React UI Library.",
+  "author": {
+    "name": "wzx",
+    "email": "2396423791@qq.com"
+  },
+  "license": "ISC",
+  "type": "module",
+  "main": "./dist/sofia.umd.js",
+  "module": "./dist/sofia.es.js",
+  "typings": "./dist/index.d.ts",
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-vite": "^7.6.6",
+    "@storybook/test": "^7.6.6",
+    "less": "^4.2.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.6",
+    "unocss": "^0.56.5",
+    "vite-plugin-static-copy": "^1.0.0"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build": "vite build && tsc --project tsconfig.build.json"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "dayjs": "^1.11.10",
+    "vite": "^5.0.10"
+  }
+}

@@ -1,0 +1,23 @@
+@import "./token.less";
+
+@btn-prefix-cls: ~'@{prefix}-btn';
+.btn-type(@type){
+  .@{btn-prefix-cls}-@{type}:not(.@{btn-prefix-cls}-disabled){
+    background-color: #1ea7fd;
+  }
+
+}
+
+.@{btn-prefix-cls}{
+  display: inline-block;
+  position: relative;
+  outline: none;
+  font-weight: @btn-font-weight;
+  appearance: none;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all @transition-duration-1 @transition-timing-function-linear;
+  box-sizing: border-box;
+  line-height: @line-height-base;
+}

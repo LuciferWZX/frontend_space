@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+//    "outDir": "es",
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "target": "es5",
+    "lib": ["es5", "dom","ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "node",
+    "declaration": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["src/components/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "components/**/*.test.tsx", "components/**/*.test.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

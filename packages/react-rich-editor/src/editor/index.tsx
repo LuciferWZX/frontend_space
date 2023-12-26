@@ -65,7 +65,6 @@ const ReactRichEditor: FC<IProps> = (props) => {
       )
     );
   }, [mentionRangeTarget, chars]);
-  console.log(11, itemIndex);
   return (
     <>
       {/*<div style={{ position: 'relative' }}>{renderMentionMenu()}</div>*/}

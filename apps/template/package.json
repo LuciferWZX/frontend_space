@@ -28,6 +28,7 @@
     "@space/react-icons": "workspace:*",
     "@space/react-rich-editor": "workspace:*",
     "@space/space-components": "workspace:*",
+    "@space/sofia-design": "workspace:*",
     "@space/stores": "workspace:*",
     "@space/themes": "workspace:*",
     "@space/types": "workspace:*",
